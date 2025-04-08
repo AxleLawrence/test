@@ -111,7 +111,6 @@ function fetchImages() {
     }
 }
 
-// Zoom-in image function (display larger version in modal)
 function zoomImage(imageSrc) {
     // Create a modal overlay
     const modal = document.createElement('div');
@@ -122,17 +121,22 @@ function zoomImage(imageSrc) {
     modalImage.src = imageSrc; // Set the large version of the image
     modalImage.classList.add('modal-content');
 
-    // Style modal (optional for positioning and full-screen)
+    // Style modal (ensure it's full-screen)
     modal.style.position = 'fixed';
     modal.style.top = '0';
     modal.style.left = '0';
-    modal.style.width = '100%';
-    modal.style.height = '100%';
-    modal.style.backgroundColor = 'rgba(0, 0, 0, 0.8)';
+    modal.style.width = '100vw'; // 100% of the viewport width
+    modal.style.height = '100vh'; // 100% of the viewport height
+    modal.style.backgroundColor = 'rgba(0, 0, 0, 0.8)'; // Dark background
     modal.style.display = 'flex';
     modal.style.justifyContent = 'center';
     modal.style.alignItems = 'center';
     modal.style.zIndex = '1000';
+
+    // Style the image to take up as much space as possible while maintaining aspect ratio
+    modalImage.style.maxWidth = '100%'; // Ensure the image fits within the viewport
+    modalImage.style.maxHeight = '100%'; // Ensure the image fits within the viewport
+    modalImage.style.objectFit = 'contain'; // Maintain aspect ratio
 
     // Close the modal when clicked outside of the image
     modal.addEventListener('click', () => {
@@ -143,6 +147,3 @@ function zoomImage(imageSrc) {
     modal.appendChild(modalImage);
     document.body.appendChild(modal); // Append the modal to the body
 }
-
-// Fetch images when the page loads
-document.addEventListener("DOMContentLoaded", fetchImages);
