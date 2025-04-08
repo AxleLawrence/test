@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monitor Dashboard</title>
+    <link rel="stylesheet" href="monitor.css">
+</head>
+<body>
+    <div class="container">
+        <button class="dashboard-btn">DASHBOARD</button>
+
+        <div class="sub-tabs">
+            <button class="sub-tab-button active" onclick="showSection('data', this)">Current Data</button>
+            <button class="sub-tab-button" onclick="showSection('images', this)">Images</button>
+            <button class="sub-tab-button" onclick="showSection('live', this)">Live</button>
+            <button class="sub-tab-button" onclick="showSection('analysis', this)">Analysis</button>
+            <button class="sub-tab-button" onclick="showSection('info', this)">Info</button>
+        </div>
+
+        <div id="data" class="sub-tab-content active">
+            <h2 style="text-align: center;">Current Data</h2>
+            <p>Date & Time:</p>
+            <div id="datetime-container" style="text-align: center;">
+                <div id="date-row">
+                    <span id="year-value" class="flipclock">Loading...</span>
+                    <span id="month-value" class="flipclock">Loading...</span>
+                    <span id="day-value" class="flipclock">Loading...</span>
+                </div>
+                <div id="time-row">
+                    <span id="hour-value" class="flipclock">Loading...</span>
+                    <span id="minute-value" class="flipclock">Loading...</span>
+                    <span id="second-value" class="flipclock">Loading...</span>
+                </div>
+            </div>
+            <p>Temperature: <span id="temp-value">Loading...</span></p>
+            <p>Humidity: <span id="humidity-value">Loading...</span></p>
+            <p>Moisture: <span id="moisture-value">Loading...</span></p>
+        </div>
+        
+        
+        
+        <div id="images" class="sub-tab-content">
+            <h2>Images</h2>
+            <p>Displaying images.</p>
+            <div id="imageGallery"></div>
+        </div>
+        <div id="live" class="sub-tab-content">
+            <h2>Live</h2>
+            <p>Live monitoring in progress.</p>
+        </div>
+        <div id="analysis" class="sub-tab-content">
+            <h2>Analysis</h2>
+            <p>Data analysis and insights.</p>
+        </div>
+        <div id="info" class="sub-tab-content">
+            <h2>Info</h2>
+            <p>General information and help.</p>
+        </div>
+    </div>
+    <script src="monitor.js"></script>
+</body>
+</html>
