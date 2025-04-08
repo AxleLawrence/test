@@ -136,7 +136,7 @@ function zoomImage(imageSrc) {
     // Style the image to take up as much space as possible while maintaining aspect ratio
     modalImage.style.maxWidth = '100%'; // Ensure the image fits within the viewport
     modalImage.style.maxHeight = '100%'; // Ensure the image fits within the viewport
-    modalImage.style.objectFit = 'contain'; // Maintain aspect ratio
+    modalImage.style.objectFit = 'contain'; // Maintain aspect ratio of the image
 
     // Close the modal when clicked outside of the image
     modal.addEventListener('click', () => {

@@ -88,7 +88,7 @@ body {
     font-size: 18px; /* Default font size */
     line-height: 1.5; /* Line height for readability */
     margin: 10px 0; /* Margin for spacing */
-    //background-color: #333; /* Darker background for both h2 and p */
+    background-color: #333; /* Darker background for both h2 and p */
     padding: 10px; /* Padding for inner spacing inside background */
     border-radius: 5px; /* Optional: rounded corners for the background */
     width: 60%; /* Manually set width, you can change this to any value you want */
@@ -158,13 +158,14 @@ p {
 
 
 /* Modal styles */
+/* Modal styles */
 .modal {
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(0, 0, 0, 0.8); /* Dark background with some transparency */
+    background-color: rgba(0, 0, 0, 0.8); /* Dark background */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -172,10 +173,36 @@ p {
   }
   
   .modal-content {
-    max-width: 90%;
-    max-height: 90%;
-    object-fit: contain;
-    border-radius: 10px;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain; /* Maintain aspect ratio */
+  }
+  
+  /* For mobile devices */
+@media (max-width: 768px) {
+    .modal-content {
+      width: 100%; /* Full width for small screens */
+      height: auto; /* Maintain aspect ratio */
+      object-fit: contain; /* Ensure the image scales correctly */
+    }
+  }
+  
+  /* For tablets and medium-sized devices (up to 1024px) */
+  @media (max-width: 1024px) {
+    .modal-content {
+      width: 100%; /* Full width */
+      height: auto; /* Maintain aspect ratio */
+      object-fit: contain; /* Ensure the image scales correctly */
+    }
+  }
+  
+  /* For larger screens like desktop */
+  @media (min-width: 1025px) {
+    .modal-content {
+      width: 100vw; /* Full width of the viewport */
+      height: 100vh; /* Full height of the viewport */
+      object-fit: contain; /* Maintain aspect ratio */
+    }
   }
   
   /* Gallery styles */
